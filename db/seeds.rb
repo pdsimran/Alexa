@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 SEED_SITES = [
+	
 ]
 
 SEED_SITES.each do |site|
