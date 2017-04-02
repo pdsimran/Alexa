@@ -10,9 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324194015) do
+ActiveRecord::Schema.define(version: 20170328142730) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dump_sites", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "india_rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_dump_sites_on_name", using: :btree
+  end
+
+  create_table "seed_sites", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "score"
+    t.index ["name"], name: "index_seed_sites_on_name", using: :btree
+  end
+
+  create_table "site_infos", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "india_rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_site_infos_on_name", using: :btree
+  end
 
 end

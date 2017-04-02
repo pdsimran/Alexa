@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+SEED_SITES = [
+]
+
+SEED_SITES.each do |site|
+	record = SeedSite.where(name: site)
+	unless record.present?
+		SeedSite.create(name: site, score: 0)
+	end
+end
